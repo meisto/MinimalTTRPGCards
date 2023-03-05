@@ -1,14 +1,15 @@
-# Minimal DnD Spell and Item Cards
+# Minimal TTRPG Spell and Item Cards
+A set of minimal TTRPG spell and item cards
 
 ## Requirements
-Scribus, latex if you want to use the script to generate a4 pages with the item cards.
+This set of scripts requires [Scribus](https://www.scribus.net) for card generation. Also Latex is needed if you want to use the script to generate a4 pages with the item cards.
 
 ## Usage
 
 
-'''bash
+~~~bash
 scribus -g -py spellgen.py
-'''
+~~~
 
 ## Todo
 - Do item cards

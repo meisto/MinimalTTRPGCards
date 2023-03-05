@@ -1,2 +1,4 @@
-output
-definitions
+output/spells/*
+output/items/*
+definitions/spells/*
+definitions/items/*

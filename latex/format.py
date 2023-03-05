@@ -6,6 +6,7 @@
 # ======================================================================
 import os
 import subprocess
+import argparse
 
 header = r"""
 \documentclass{report} % Bsp: article, scrbook, book, report, letter, scrartcl, scrreprt
@@ -16,8 +17,7 @@ header = r"""
 """
 
 footer = r'\end{document}'
-def main():
-    spell_list_file = "spelllist.txt"
+def main(spell_list_file):
 
 
     root_path = os.path.realpath(__file__)
@@ -83,7 +83,7 @@ def main():
                 "rm",
                 "spellcards_collection.log",
                 "spellcards_collection.aux",
-                "spellcards_collection.text",
+                "spellcards_collection.tex",
             ],
             check = True
         )
@@ -92,4 +92,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(
+        description = "Generate a pdf containing all spellcards for a given " +
+            "list.",
+    )
+    parser.add_argument('-f', '--file', required=True)
+
+    args = parser.parse_args()
+
+
+    main(args.file)
